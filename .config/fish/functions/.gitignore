@@ -1,6 +1,8 @@
 **
 
 !/.gitignore
+
 !/fish_prompt.fish
+!/prompt_utils.fish
 !/prompts/
 !/prompts/*
