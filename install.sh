@@ -1,4 +1,5 @@
 #!/bin/bash -eu
+set -eu
 cd $(dirname $0)
 
 nodeploy=" .git .gitignore .DS_Store "
