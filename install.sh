@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 cd $(dirname $0)
 
 nodeploy=" .git .gitignore .DS_Store "
@@ -6,12 +6,12 @@ backup_dir=~/.dotfiles.backup/$(date '+%Y_%m_%d__%H_%M_%S')
 
 dry_run=0
 
-if [ ${1} = "--dry-run" ]; then
+if [ "${1}" = "--dry-run" ]; then
   echo "[INFO] Dry run mode. Files are not actually created."
   dry_run=1
 fi
 
-[ $dry_run == 0 ] && mkdir -p backup_dir
+[ $dry_run == 0 ] && mkdir -p $backup_dir
 
 for file in .??*; do
   if [[ $nodeploy == *" $file "* ]]; then
