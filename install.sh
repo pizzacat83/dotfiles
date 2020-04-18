@@ -2,15 +2,30 @@
 set -eu
 cd $(dirname $0)
 
-nodeploy=" .git .gitignore .DS_Store "
+nodeploy=" .git .github .gitignore .DS_Store "
 backup_dir=~/.dotfiles.backup/$(date '+%Y_%m_%d__%H_%M_%S')
 
-dry_run=0
-
-if [ "${1}" = "--dry-run" ]; then
-  echo "[INFO] Dry run mode. Files are not actually created."
-  dry_run=1
+if [ $# -ne 1 ]; then
+  echo "[ERROR] This script accepts only one argument."
+  echo "Run `install.sh --dry-run` if you want to check what will be installed."
+  echo "Run `install.sh -y` if you really want to install dotfiles." 
+  exit 1
 fi
+
+case "${1}" in
+  "--dry-run")
+    echo "[INFO] Dry run mode. Files are not actually created."
+    dry_run=1
+    ;;
+  "-y" | "--yes")
+    echo "[INFO] Installation mode."
+    dry_run=1
+    ;;
+  "*")
+    echo "[ERROR] Unknown argument: ${1}"
+    exit 1
+    ;;
+esac
 
 [ $dry_run == 0 ] && mkdir -p $backup_dir
 

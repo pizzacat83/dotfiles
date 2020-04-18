@@ -28,7 +28,7 @@ fi
 echo "ok"
 
 echo "running `install.sh`..."
-bash --posix install.sh
+bash --posix install.sh -y
 echo "done"
 
 echo "checking..."
