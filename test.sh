@@ -27,7 +27,7 @@ else
 fi
 echo "ok"
 
-echo "running `install.sh`..."
+echo "running `install.sh -y`..."
 bash --posix install.sh -y
 echo "done"
 

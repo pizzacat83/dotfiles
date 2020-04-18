@@ -19,7 +19,7 @@ case "${1}" in
     ;;
   "-y" | "--yes")
     echo "[INFO] Installation mode."
-    dry_run=1
+    dry_run=0
     ;;
   "*")
     echo "[ERROR] Unknown argument: ${1}"
