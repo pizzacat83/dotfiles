@@ -61,5 +61,11 @@ function prompt_print_pwd --description 'print pwd for prompt'
 end
 
 function prompt_print_status_bar --description 'print status bar of prompt'
-	printf '%s%s%s@%s [%s%s%s]' (set_color cyan) (prompt_print_user) (set_color normal) (prompt_print_hostname) (set_color cyan -u) (prompt_print_pwd) (set_color normal)
+	set -l old_status $argv[1]
+	if test "$old_status" = "0"
+		set exit_status_prompt ''
+	else
+		set exit_status_prompt (printf ' %s[%s]%s' (set_color --bold red) $old_status (set_color normal))
+	end
+	printf '%s%s%s@%s [%s%s%s]%s' (set_color cyan) (prompt_print_user) (set_color normal) (prompt_print_hostname) (set_color cyan -u) (prompt_print_pwd) (set_color normal) $exit_status_prompt
 end
