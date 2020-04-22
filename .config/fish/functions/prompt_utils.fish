@@ -60,6 +60,8 @@ function prompt_print_pwd --description 'print pwd for prompt'
 	end
 end
 
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+
 function prompt_print_status_bar --description 'print status bar of prompt'
 	set -l old_status $argv[1]
 	if test "$old_status" = "0"
@@ -67,5 +69,10 @@ function prompt_print_status_bar --description 'print status bar of prompt'
 	else
 		set exit_status_prompt (printf ' %s[%s]%s' (set_color --bold red) $old_status (set_color normal))
 	end
-	printf '%s%s%s@%s [%s%s%s]%s' (set_color cyan) (prompt_print_user) (set_color normal) (prompt_print_hostname) (set_color cyan -u) (prompt_print_pwd) (set_color normal) $exit_status_prompt
+	if test "$VIRTUAL_ENV" = ""
+		set venv_prompt ''
+	else
+		set venv_prompt (printf ' (py: %s)' (basename (dirname $VIRTUAL_ENV)))
+	end
+	printf '%s%s%s@%s [%s%s%s]%s%s' (set_color cyan) (prompt_print_user) (set_color normal) (prompt_print_hostname) (set_color cyan -u) (prompt_print_pwd) (set_color normal) $exit_status_prompt $venv_prompt
 end
