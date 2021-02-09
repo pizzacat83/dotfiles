@@ -9,7 +9,7 @@ end
 function prompt_kawaii_print_face2 --description 'print 2nd line of face of prompt'
 	if set -q fish_private_mode
 		if test "$argv[1]" = "0"
-			printf "(▽-▽)"
+			printf "(∇-∇)"
 		else
 			printf '%s(°-°)%s' (set_color brred) (set_color normal)
 		end
