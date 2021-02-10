@@ -1,0 +1,28 @@
+name: Test Brewfiles
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * 6'
+
+jobs:
+  test:
+    name: Test Brewfiles
+    defaults:
+      run:
+        working-directory: others/brew
+
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install from Brewfiles and check
+        run: |
+          for file in *; do
+            echo Install from $file &&
+            brew bundle install --file $file &&
+            brew bundle check --file $file
+          done
