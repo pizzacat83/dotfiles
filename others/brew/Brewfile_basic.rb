@@ -19,5 +19,4 @@ brew "semgrep"
 
 # languages
 brew "python@3.9"
-brew "node"
 brew "rbenv"
