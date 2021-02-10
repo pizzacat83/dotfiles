@@ -1,3 +1,2 @@
-cask "java"
-cask "blackhole"
+cask "blackhole-16ch"
 cask "ngrok"
