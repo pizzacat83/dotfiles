@@ -23,6 +23,6 @@ jobs:
         run: |
           for file in *; do
             echo Install from $file &&
-            brew bundle install --file $file &&
+            brew bundle install --file $file --no-lock &&
             brew bundle check --file $file
           done
