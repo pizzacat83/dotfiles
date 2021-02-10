@@ -3,4 +3,5 @@
 !.gitignore
 
 !/config.fish
+!/fish_plugins
 !/functions/
