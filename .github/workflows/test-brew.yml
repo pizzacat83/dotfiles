@@ -15,9 +15,14 @@ jobs:
         working-directory: others/brew
 
     runs-on: macos-latest
+    
+    env:
+      HOMEBREW_BUNDLE_BREW_SKIP: awscli
 
     steps:
       - uses: actions/checkout@v2
+        
+      - run: 'echo skipped: $HOMEBREW_BUNDLE_BREW_SKIP'
 
       - name: install from Brewfiles and check
         run: |
