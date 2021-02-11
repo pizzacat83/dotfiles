@@ -3,6 +3,9 @@ name: Test Brewfiles
 on:
   push:
   pull_request:
+    paths:
+      - 'others/brew/**'
+      - '.github/workflows/test-brew.yml'
   workflow_dispatch:
   schedule:
     - cron:  '0 0 * * 6'
