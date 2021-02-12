@@ -588,6 +588,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>0</integer>
 			<key>Transparency</key>
 			<real>0.13320002605005637</real>
 			<key>Unlimited Scrollback</key>
@@ -1226,6 +1228,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>0</integer>
 			<key>Transparency</key>
 			<real>0.29999999999999999</real>
 			<key>Unlimited Scrollback</key>
