@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Command</key>
+	<string>/usr/local/bin/fish</string>
 	<key>Default Bookmark Guid</key>
 	<string>AD90686C-6060-4DB7-9C28-14F185C5C33E</string>
 	<key>HapticFeedbackForEsc</key>
@@ -212,7 +214,7 @@
 				<real>1</real>
 			</dict>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>Custom Shell</string>
 			<key>Custom Directory</key>
 			<string>Yes</string>
 			<key>Default Bookmark</key>
