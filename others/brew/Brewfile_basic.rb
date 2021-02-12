@@ -15,6 +15,8 @@ brew "git-secrets"
 brew "jq"
 brew "socat"
 brew "telnet"
+brew "gnupg"
+brew "pinentry-mac"
 brew "semgrep"
 
 # languages
