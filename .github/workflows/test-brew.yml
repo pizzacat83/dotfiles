@@ -2,6 +2,9 @@ name: Test Brewfiles
 
 on:
   push:
+    paths:
+      - 'others/brew/**'
+      - '.github/workflows/test-brew.yml'
   pull_request:
     paths:
       - 'others/brew/**'
