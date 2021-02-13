@@ -35,6 +35,7 @@ for file in .??*; do
     continue
   fi
   if [ -L "$HOME/$file" ]; then
+    # TODO: check link is correct
     echo "[SKIP] $file already installed. skipping."
     continue
   fi
