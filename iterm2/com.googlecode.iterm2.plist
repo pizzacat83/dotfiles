@@ -8,6 +8,8 @@
 	<string>/usr/local/bin/fish</string>
 	<key>Default Bookmark Guid</key>
 	<string>AD90686C-6060-4DB7-9C28-14F185C5C33E</string>
+	<key>DoubleClickPerformsSmartSelection</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
