@@ -5,7 +5,7 @@
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>Command</key>
-	<string>/usr/local/bin/fish</string>
+	<string></string>
 	<key>Default Bookmark Guid</key>
 	<string>AD90686C-6060-4DB7-9C28-14F185C5C33E</string>
 	<key>DoubleClickPerformsSmartSelection</key>
@@ -1543,6 +1543,8 @@
 			<string>~</string>
 		</dict>
 	</array>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
@@ -1580,6 +1582,8 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
