@@ -74,8 +74,8 @@ function prompt_print_status_bar --description 'print status bar of prompt'
 	else
 		set venv_prompt (printf ' %s(py: %s)%s' (set_color brblack) (basename (dirname $VIRTUAL_ENV)) (set_color normal))
 	end
-	if test -f ~/.config/nvm/version
-		set node_prompt (printf " %s(js: %s)%s" (set_color brblack)  (cat ~/.config/nvm/version) (set_color normal))
+	if set --query nvm_current_version
+		set node_prompt (printf " %s(js: %s)%s" (set_color brblack) $nvm_current_version (set_color normal))
 	else 
 		set node_prompt ''
 	end
