@@ -22,3 +22,9 @@ brew "semgrep"
 # languages
 brew "python@3.9"
 brew "rbenv"
+brew "opam"
+brew "haskell-stack"
+
+# others
+tap "aws/tap"
+brew "awscli"
