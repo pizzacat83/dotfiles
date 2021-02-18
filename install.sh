@@ -23,7 +23,7 @@ case "${1}" in
     echo "[INFO] Installation mode."
     dry_run=0
     ;;
-  "*")
+  *)
     echo "[ERROR] Unknown argument: ${1}"
     exit 1
     ;;
