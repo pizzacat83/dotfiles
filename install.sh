@@ -29,13 +29,14 @@ case "${1}" in
     ;;
 esac
 
-[ $dry_run == 0 ] && mkdir -p "$backup_dir"
+[ $dry_run -eq 0 ] && mkdir -p "$backup_dir"
 
 for file in .??*; do
-  if [[ $nodeploy == *" $file "* ]]; then
-    echo "[SKIP] $file ignored. skipping."
-    continue
-  fi
+  case $nodeploy in
+    *" $file "*)
+      echo "[SKIP] $file ignored. skipping."
+      continue
+  esac
   if [ -L "$HOME/$file" ]; then
     # TODO: check link is correct
     echo "[SKIP] $file already installed. skipping."
@@ -43,8 +44,8 @@ for file in .??*; do
   fi
   if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
     echo "[WARN] $file exists. backed up in $backup_dir/$file"
-    [ $dry_run == 0 ] && mv "$HOME/$file" "$backup_dir/"
+    [ $dry_run -eq 0 ] && mv "$HOME/$file" "$backup_dir/"
   fi
   echo "installing $file..."
-  [ $dry_run == 0 ] && ln -snfv "$PWD/$file" "$HOME/$file"
+  [ $dry_run -eq 0 ] && ln -snfv "$PWD/$file" "$HOME/$file"
 done
