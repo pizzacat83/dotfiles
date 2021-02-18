@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/bin/sh -eux
 set -eux
 echo "checking requirements..."
 
@@ -14,7 +14,8 @@ mkdir -p ~/.config/dir
 touch ~/.config/dir/file
 echo "done"
 
-echo "running `install.sh --dry-run`..."
+# shellcheck disable=SC2016
+echo 'running `install.sh --dry-run`...'
 bash --posix install.sh --dry-run
 echo "done"
 
@@ -27,7 +28,8 @@ else
 fi
 echo "ok"
 
-echo "running `install.sh -y`..."
+# shellcheck disable=SC2016
+echo 'running `install.sh -y`...'
 bash --posix install.sh -y
 echo "done"
 
