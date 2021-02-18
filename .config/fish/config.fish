@@ -15,3 +15,9 @@ set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $P
 if test -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
   source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 end
+
+# aliases
+
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
