@@ -12,6 +12,7 @@ cask "docker"
 cask "visual-studio-code"
 cask "iterm2"
 cask "google-cloud-sdk"
+cask "postman"
 
 # sound
 cask "blackhole-16ch"
