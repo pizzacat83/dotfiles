@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 set -eu
-cd $(dirname $0)
+cd "$(dirname "$0")"
 
 nodeploy=" .git .github .gitignore .DS_Store "
 backup_dir=~/.dotfiles.backup/$(date '+%Y_%m_%d__%H_%M_%S')
@@ -27,7 +27,7 @@ case "${1}" in
     ;;
 esac
 
-[ $dry_run == 0 ] && mkdir -p $backup_dir
+[ $dry_run == 0 ] && mkdir -p "$backup_dir"
 
 for file in .??*; do
   if [[ $nodeploy == *" $file "* ]]; then
@@ -39,10 +39,10 @@ for file in .??*; do
     echo "[SKIP] $file already installed. skipping."
     continue
   fi
-  if [ -f "$HOME/$file" -o -d "$HOME/$file" ]; then
+  if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
     echo "[WARN] $file exists. backed up in $backup_dir/$file"
-    [ $dry_run == 0 ] && mv $HOME/$file $backup_dir/
+    [ $dry_run == 0 ] && mv "$HOME/$file" "$backup_dir/"
   fi
   echo "installing $file..."
-  [ $dry_run == 0 ] && ln -snfv $PWD/$file $HOME/$file
+  [ $dry_run == 0 ] && ln -snfv "$PWD/$file" "$HOME/$file"
 done

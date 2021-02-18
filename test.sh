@@ -14,7 +14,7 @@ mkdir -p ~/.config/dir
 touch ~/.config/dir/file
 echo "done"
 
-echo "running `install.sh --dry-run`..."
+echo 'running `install.sh --dry-run`...'
 bash --posix install.sh --dry-run
 echo "done"
 
@@ -27,7 +27,7 @@ else
 fi
 echo "ok"
 
-echo "running `install.sh -y`..."
+echo 'running `install.sh -y`...'
 bash --posix install.sh -y
 echo "done"
 
