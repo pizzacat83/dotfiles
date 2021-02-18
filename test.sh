@@ -1,4 +1,4 @@
-#!/bin/sh -eu
+#!/bin/sh -eux
 set -eux
 echo "checking requirements..."
 
