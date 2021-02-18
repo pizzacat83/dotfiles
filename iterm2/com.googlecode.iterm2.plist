@@ -5,7 +5,7 @@
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>Command</key>
-	<string></string>
+	<string>/usr/local/bin/fish</string>
 	<key>Default Bookmark Guid</key>
 	<string>AD90686C-6060-4DB7-9C28-14F185C5C33E</string>
 	<key>DoubleClickPerformsSmartSelection</key>
@@ -204,7 +204,7 @@
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
-			<true/>
+			<integer>1</integer>
 			<key>Columns</key>
 			<integer>80</integer>
 			<key>Command</key>
@@ -695,6 +695,8 @@
 					<string></string>
 				</dict>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -706,6 +708,8 @@
 			<key>Normal Font</key>
 			<string>Menlo-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
+			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
@@ -1603,6 +1607,10 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
+	<false/>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>
 </plist>
