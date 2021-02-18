@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 nodeploy=" .git .github .gitignore .DS_Store "
 backup_dir=~/.dotfiles.backup/$(date '+%Y_%m_%d__%H_%M_%S')
 
-if [ $# -ne 1 ]; then
+if [ "$#" -ne 1 ]; then
   echo "[ERROR] This script accepts exactly one argument."
   # shellcheck disable=SC2016
   echo 'Run `install.sh --dry-run` if you want to check what will be installed.'
@@ -29,10 +29,10 @@ case "${1}" in
     ;;
 esac
 
-[ $dry_run -eq 0 ] && mkdir -p "$backup_dir"
+[ "$dry_run" -eq 0 ] && mkdir -p "$backup_dir"
 
 for file in .??*; do
-  case $nodeploy in
+  case "$nodeploy" in
     *" $file "*)
       echo "[SKIP] $file ignored. skipping."
       continue
@@ -44,8 +44,8 @@ for file in .??*; do
   fi
   if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
     echo "[WARN] $file exists. backed up in $backup_dir/$file"
-    [ $dry_run -eq 0 ] && mv "$HOME/$file" "$backup_dir/"
+    [ "$dry_run" -eq 0 ] && mv "$HOME/$file" "$backup_dir/"
   fi
   echo "installing $file..."
-  [ $dry_run -eq 0 ] && ln -snfv "$PWD/$file" "$HOME/$file"
+  [ "$dry_run" -eq 0 ] && ln -snfv "$PWD/$file" "$HOME/$file"
 done
