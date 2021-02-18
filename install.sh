@@ -3,7 +3,7 @@ set -eu
 cd "$(dirname "$0")"
 
 nodeploy=" .git .github .gitignore .DS_Store "
-backup_dir=~/.dotfiles.backup/$(date '+%Y_%m_%d__%H_%M_%S')
+backup_dir="$HOME/.dotfiles.backup/$(date '+%Y_%m_%d__%H_%M_%S')"
 
 if [ "$#" -ne 1 ]; then
   echo "[ERROR] This script accepts exactly one argument."
