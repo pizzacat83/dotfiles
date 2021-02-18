@@ -14,6 +14,7 @@ mkdir -p ~/.config/dir
 touch ~/.config/dir/file
 echo "done"
 
+# shellcheck disable=SC2016
 echo 'running `install.sh --dry-run`...'
 bash --posix install.sh --dry-run
 echo "done"
@@ -27,6 +28,7 @@ else
 fi
 echo "ok"
 
+# shellcheck disable=SC2016
 echo 'running `install.sh -y`...'
 bash --posix install.sh -y
 echo "done"

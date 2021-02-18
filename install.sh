@@ -7,7 +7,9 @@ backup_dir=~/.dotfiles.backup/$(date '+%Y_%m_%d__%H_%M_%S')
 
 if [ $# -ne 1 ]; then
   echo "[ERROR] This script accepts exactly one argument."
+  # shellcheck disable=SC2016
   echo 'Run `install.sh --dry-run` if you want to check what will be installed.'
+  # shellcheck disable=SC2016
   echo 'Run `install.sh -y` if you really want to install dotfiles.'
   exit 1
 fi
