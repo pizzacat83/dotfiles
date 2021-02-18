@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+#!/bin/sh -eu
 set -eu
 cd "$(dirname "$0")"
 
