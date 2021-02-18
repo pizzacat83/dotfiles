@@ -17,6 +17,7 @@ brew "socat"
 brew "telnet"
 brew "gnupg"
 brew "pinentry-mac"
+brew "shellcheck"
 brew "semgrep"
 
 # languages
