@@ -36,6 +36,7 @@ for file in .??*; do
     *" $file "*)
       echo "[SKIP] $file ignored. skipping."
       continue
+      ;;
   esac
   if [ -L "$HOME/$file" ]; then
     # TODO: check link is correct
