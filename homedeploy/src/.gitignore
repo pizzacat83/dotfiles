@@ -1,9 +1,8 @@
-/backup/
-
 # ignore all dotfiles by default
 .**
 
+# exclude .gitignore
 !.gitignore
-!/.github/
 
+# these files are tracked
 !/.config/

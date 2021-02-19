@@ -2,7 +2,7 @@
 set -eu
 cd "$(dirname "$0")"
 
-nodeploy=" .git .github .gitignore .DS_Store "
+nodeploy=" .gitignore .DS_Store "
 backup_dir="./backup/$(date '+%Y_%m_%d__%H_%M_%S')"
 
 if [ "$#" -ne 1 ]; then
@@ -31,22 +31,36 @@ esac
 
 [ "$dry_run" -eq 0 ] && mkdir -p "$backup_dir"
 
-for file in .??*; do
+for filepath in src/.??*; do
+  target="$PWD/$filepath"
+  file=$(basename "$filepath")
+
   case "$nodeploy" in
     *" $file "*)
       echo "[SKIP] $file ignored. skipping."
       continue
       ;;
   esac
+  
+
   if [ -L "$HOME/$file" ]; then
-    # TODO: check link is correct
-    echo "[SKIP] $file already installed. skipping."
-    continue
+    current=$(readlink "$HOME/$file")
+    if [ "$current" = "$target" ]; then
+      echo "[SKIP] $file already installed. skipping."
+      continue
+    else
+      echo "[INFO] $file is linked to $current"
+      echo "[INFO] overwriting link..."
+      [ "$dry_run" -eq 0 ] && ln -snfv "$target"  "$HOME/$file"
+      continue
+    fi
   fi
+
   if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
     echo "[WARN] $file exists. backed up in $backup_dir/$file"
     [ "$dry_run" -eq 0 ] && mv "$HOME/$file" "$backup_dir/"
   fi
+
   echo "installing $file..."
-  [ "$dry_run" -eq 0 ] && ln -snfv "$PWD/$file" "$HOME/$file"
+  [ "$dry_run" -eq 0 ] && ln -snv "$target"  "$HOME/$file"
 done
