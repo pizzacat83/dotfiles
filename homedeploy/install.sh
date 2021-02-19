@@ -2,7 +2,7 @@
 set -eu
 cd "$(dirname "$0")"
 
-nodeploy=" .gitignore .DS_Store "
+nodeploy=" . .. .gitignore .DS_Store "
 backup_dir="./backup/$(date '+%Y_%m_%d__%H_%M_%S')"
 
 if [ "$#" -ne 1 ]; then
@@ -31,7 +31,13 @@ esac
 
 [ "$dry_run" -eq 0 ] && mkdir -p "$backup_dir"
 
-for filepath in src/.??*; do
+for filepath in src/* src/.*; do
+  if [ ! -e "$filepath" ]; then
+    # this may be unexpanded globs
+    echo "[SKIP] $filepath does not exist."
+    continue
+  fi
+
   target="$PWD/$filepath"
   file=$(basename "$filepath")
 
