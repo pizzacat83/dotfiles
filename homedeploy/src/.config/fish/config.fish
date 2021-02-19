@@ -5,6 +5,8 @@ set SCRAPBOX_PROJECT pizzacat83
 # set general variables
 
 # setup tools
+# poetry
+set -x PATH "$HOME/.poetry/bin" $PATH
 # rust
 set -x PATH "$HOME/.cargo/bin" $PATH
 # opam
