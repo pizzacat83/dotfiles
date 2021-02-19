@@ -38,35 +38,36 @@ for filepath in src/* src/.*; do
     continue
   fi
 
-  target="$PWD/$filepath"
-  file=$(basename "$filepath")
+  source="$PWD/$filepath"
+  filename=$(basename "$filepath")
+  target="$HOME/$filename"
 
   case "$nodeploy" in
-    *" $file "*)
-      echo "[SKIP] $file ignored. skipping."
+    *" $filename "*)
+      echo "[SKIP] $filename ignored. skipping."
       continue
       ;;
   esac
   
 
-  if [ -L "$HOME/$file" ]; then
-    current=$(readlink "$HOME/$file")
-    if [ "$current" = "$target" ]; then
-      echo "[SKIP] $file already deployed. skipping."
+  if [ -L "$target" ]; then
+    current=$(readlink "$target")
+    if [ "$current" = "$source" ]; then
+      echo "[SKIP] $filename already deployed. skipping."
       continue
     else
-      echo "[INFO] $file is linked to $current"
+      echo "[INFO] $filename is linked to $current"
       echo "[INFO] overwriting link..."
-      [ "$dry_run" -eq 0 ] && ln -snfv "$target" "$HOME/$file"
+      [ "$dry_run" -eq 0 ] && ln -snfv "$source" "$target"
       continue
     fi
   fi
 
-  if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
-    echo "[WARN] $file exists. backed up in $backup_dir/$file"
-    [ "$dry_run" -eq 0 ] && mv "$HOME/$file" "$backup_dir/"
+  if [ -e "$target" ]; then
+    echo "[WARN] $filename exists. backed up in $backup_dir/$filename"
+    [ "$dry_run" -eq 0 ] && mv "$target" "$backup_dir/"
   fi
 
-  echo "[INFO] deploying $file..."
-  [ "$dry_run" -eq 0 ] && ln -snv "$target"  "$HOME/$file"
+  echo "[INFO] deploying $filename..."
+  [ "$dry_run" -eq 0 ] && ln -snv "$source"  "$target"
 done
