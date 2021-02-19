@@ -1,8 +1,10 @@
 #!/bin/sh -eux
 set -eux
+cd "$(dirname "$0")"
+
 echo "checking requirements..."
 
-if [ ! -d ./.config ]; then
+if [ ! -d ./src/.config ]; then
     echo "Error: This test requires the existence of dotfiles/.config/."
     exit 1
     # TODO: I think it's better to create dummy dotfiles and dummy ~ for testing.
