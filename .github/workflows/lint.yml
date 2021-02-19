@@ -11,3 +11,4 @@ jobs:
 
     - name: Lint shell scripts
       run: shellcheck **.sh
+      shell: bash
