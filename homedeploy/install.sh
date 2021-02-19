@@ -3,14 +3,14 @@ set -eu
 cd "$(dirname "$0")"
 
 nodeploy=" . .. .gitignore .DS_Store "
-backup_dir="./backup/$(date '+%Y_%m_%d__%H_%M_%S')"
+backup_dir="backup/$(date '+%Y_%m_%d__%H_%M_%S')"
 
 if [ "$#" -ne 1 ]; then
   echo "[ERROR] This script accepts exactly one argument."
   # shellcheck disable=SC2016
-  echo 'Run `install.sh --dry-run` if you want to check what will be installed.'
+  echo 'Run `install.sh --dry-run` if you want to check what will be deployed.'
   # shellcheck disable=SC2016
-  echo 'Run `install.sh -y` if you really want to install dotfiles.'
+  echo 'Run `install.sh -y` if you really want to deploy dotfiles.'
   exit 1
 fi
 
@@ -33,7 +33,7 @@ esac
 
 for filepath in src/* src/.*; do
   if [ ! -e "$filepath" ]; then
-    # this may be unexpanded globs
+    # this might be unexpanded glob
     echo "[SKIP] $filepath does not exist."
     continue
   fi
@@ -52,12 +52,12 @@ for filepath in src/* src/.*; do
   if [ -L "$HOME/$file" ]; then
     current=$(readlink "$HOME/$file")
     if [ "$current" = "$target" ]; then
-      echo "[SKIP] $file already installed. skipping."
+      echo "[SKIP] $file already deployed. skipping."
       continue
     else
       echo "[INFO] $file is linked to $current"
       echo "[INFO] overwriting link..."
-      [ "$dry_run" -eq 0 ] && ln -snfv "$target"  "$HOME/$file"
+      [ "$dry_run" -eq 0 ] && ln -snfv "$target" "$HOME/$file"
       continue
     fi
   fi
@@ -67,6 +67,6 @@ for filepath in src/* src/.*; do
     [ "$dry_run" -eq 0 ] && mv "$HOME/$file" "$backup_dir/"
   fi
 
-  echo "installing $file..."
+  echo "[INFO] deploying $file..."
   [ "$dry_run" -eq 0 ] && ln -snv "$target"  "$HOME/$file"
 done
