@@ -3,11 +3,11 @@ name: Test Brewfiles
 on:
   push:
     paths:
-      - 'others/brew/**'
+      - 'brew/**'
       - '.github/workflows/test-brew.yml'
   pull_request:
     paths:
-      - 'others/brew/**'
+      - 'brew/**'
       - '.github/workflows/test-brew.yml'
   workflow_dispatch:
   schedule:
@@ -18,7 +18,7 @@ jobs:
     name: Test Brewfiles
     defaults:
       run:
-        working-directory: others/brew
+        working-directory: brew
 
     runs-on: macos-latest
     
