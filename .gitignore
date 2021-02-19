@@ -1,3 +1,6 @@
+/backup/
+
+# ignore all dotfiles by default
 .**
 
 !.gitignore
