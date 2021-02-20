@@ -2,32 +2,11 @@
 set -eu
 cd "$(dirname "$0")"
 
+# shellcheck source=../install_init.sh
+. ../install_init.sh
+
 nodeploy=" . .. .gitignore .DS_Store "
 backup_dir="backup/$(date '+%Y_%m_%d__%H_%M_%S')"
-
-if [ "$#" -ne 1 ]; then
-    echo "[ERROR] This script accepts exactly one argument."
-    # shellcheck disable=SC2016
-    echo 'Run `install.sh --dry-run` if you want to check what will be deployed.'
-    # shellcheck disable=SC2016
-    echo 'Run `install.sh -y` if you really want to deploy dotfiles.'
-    exit 1
-fi
-
-case "${1}" in
-    "--dry-run")
-        echo "[INFO] Dry run mode. Files are not actually created."
-        dry_run=1
-        ;;
-    "-y" | "--yes")
-        echo "[INFO] Installation mode."
-        dry_run=0
-        ;;
-    *)
-        echo "[ERROR] Unknown argument: ${1}"
-        exit 1
-        ;;
-esac
 
 [ "$dry_run" -eq 0 ] && mkdir -p "$backup_dir"
 
