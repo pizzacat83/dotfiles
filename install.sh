@@ -2,6 +2,10 @@
 set -eu
 cd "$(dirname "$0")"
 
+# beep on sudo
+SUDO_PROMPT="$(printf "\a")[sudo] Password:"
+export SUDO_PROMPT
+
 if [ "$#" -ne 1 ]; then
     echo "[ERROR] This script accepts exactly one argument."
     # shellcheck disable=SC2016
