@@ -18,5 +18,7 @@ jobs:
     - name: Check syntax of fish scripts
       run: |
           for file in *.fish **/*.fish; do
-            [ -f $file ] && fish --no-execute $file
+            if [ -f $file ]; then
+              fish --no-execute $file
+            fi
           done
