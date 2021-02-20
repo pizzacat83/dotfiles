@@ -14,3 +14,9 @@ jobs:
 
     - name: Lint shell scripts
       run: shellcheck -P SCRIPTDIR *.sh **/*.sh
+
+    - name: Check syntax of fish scripts
+      run: |
+          for file in *.fish **/*.fish; do
+            fish --no-execute $file
+          done
