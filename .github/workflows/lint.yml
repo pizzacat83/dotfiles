@@ -9,8 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install latest shellcheck
-      run: brew install shellcheck
+    - name: Install tools
+      run: brew install shellcheck fish
 
     - name: Lint shell scripts
       run: shellcheck -P SCRIPTDIR *.sh **/*.sh
