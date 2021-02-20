@@ -1,5 +1,5 @@
-# ignore all dotfiles by default
-.**
+# ignore all files by default
+**
 
 # exclude .gitignore
 !.gitignore
