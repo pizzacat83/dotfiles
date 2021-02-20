@@ -2,8 +2,8 @@
 set -eu
 
 if [ "$(uname)" != "Darwin" ]; then
-    echo "[ERROR] This script only works on macOS."
-    exit 1
+    echo "[SKIP] This script only works on macOS."
+    exit
 fi
 
 # Set screenshot save location
