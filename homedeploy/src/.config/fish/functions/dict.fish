@@ -25,17 +25,20 @@ function dict --description 'open dictionary'
         return 1
     end
 
+    set -l word $argv[1]
+    set -l query (urlencode $word)
+
     set -l url
 
     switch $source
         case eijiro
-            set url "https://eow.alc.co.jp/search?q=$argv[1]"
+            set url "https://eow.alc.co.jp/search?q=$query"
         case oxford
-            set url "https://www.oxfordlearnersdictionaries.com/definition/english/$argv[1]"
+            set url "https://www.oxfordlearnersdictionaries.com/definition/english/$query"
         case app
-            set url "dict://$argv[1]"
+            set url "dict://$query"
         case '*'
-            echo "unknown source: $argv[1]"
+            echo "unknown source: $word"
             return 1
     end
 

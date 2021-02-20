@@ -13,5 +13,5 @@ function diary --description 'open diary'
         return 1
     end
 
-    open https://scrapbox.io/$SCRAPBOX_PROJECT/(date "+%Y")%2F(date "+%m")%2F(date "+%d")
+    open https://scrapbox.io/$SCRAPBOX_PROJECT/(urlencode (date "+%Y/%m/%d"))
 end
