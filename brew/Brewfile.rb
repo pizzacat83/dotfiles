@@ -12,6 +12,7 @@ brew "gh"
 brew "git-secrets"
 
 # utilities
+brew "coreutils"
 brew "jq"
 brew "socat"
 brew "telnet"
