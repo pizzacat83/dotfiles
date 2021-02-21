@@ -30,9 +30,12 @@ case "${1}" in
         ;;
 esac
 
-for dir in *; do
+install() {
+    dir=$1
+    opt=$2
+
     if [ ! -d "$dir" ]; then
-        continue
+        return
     fi
 
     if [ -x "$dir/install.sh" ]; then
@@ -42,4 +45,21 @@ for dir in *; do
     else
         echo "[SKIP] $dir does not have install.sh"
     fi
+}
+
+runfirst=" homedeploy "
+
+for dir in $runfirst; do
+    install "$dir" "$opt"
+done
+
+for dir in *; do
+    case "$runfirst" in
+        *" $dir "*)
+            # already installed
+            continue
+            ;;
+    esac
+
+    install "$dir" "$opt"
 done
