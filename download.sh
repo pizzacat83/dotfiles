@@ -11,4 +11,4 @@ dotfiles_dir="$HOME/dotfiles"
 
 git clone https://github.com/pizzacat83/dotfiles.git "$dotfiles_dir"
 
-echo "[INFO] completely downloaded dotfiles to $dotfiles_dir/dir"
+echo "[INFO] completely downloaded dotfiles to $dotfiles_dir"
