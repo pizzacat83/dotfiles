@@ -8,4 +8,5 @@
 !/prompts/*
 !/dict.fish
 !/diary.fish
+!/dotfiles.fish
 !/urlencode.fish
