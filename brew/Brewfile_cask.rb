@@ -23,3 +23,6 @@ cask "anki"
 
 # communication
 cask "slack"
+
+# others
+cask "haptickey"
