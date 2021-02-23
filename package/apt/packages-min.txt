@@ -1,0 +1,3 @@
+build-essential
+fish
+python3
