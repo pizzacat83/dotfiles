@@ -32,7 +32,7 @@ jobs:
 
       - name: install from Brewfiles and check
         run: |
-          for file in *; do
+          for file in *.rb; do
             echo Install from $file &&
             brew bundle install --file $file --no-lock &&
             brew bundle check --file $file
