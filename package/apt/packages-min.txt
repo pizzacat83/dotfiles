@@ -1,3 +1,6 @@
 build-essential
 fish
 python3
+netcat
+socat
+telnet
