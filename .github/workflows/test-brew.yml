@@ -30,6 +30,8 @@ jobs:
         
       - run: 'echo skipped: $HOMEBREW_BUNDLE_BREW_SKIP'
 
+      - run: brew update
+
       - name: install from Brewfiles and check
         run: |
           for file in *.rb; do
