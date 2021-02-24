@@ -14,8 +14,10 @@ fi
 if [ "$dry_run" -eq 0 ]; then
     if [ "$(id -u)" -eq 0 ]; then
         # user is root (e.g. docker)
+        apt update
         <packages-min.txt xargs apt install -y
     elif command -v sudo > /dev/null; then
+        sudo apt update
         <packages-min.txt xargs sudo apt install -y
     else
         echo "[ERROR] you need sudo installed to install apt packages."
