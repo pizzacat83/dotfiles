@@ -81,3 +81,13 @@ function prompt_print_status_bar --description 'print status bar of prompt'
 	end
 	printf '%s%s%s@%s [%s%s%s]%s%s%s' (set_color cyan) (prompt_print_user) (set_color normal) (prompt_print_hostname) (set_color cyan -u) (prompt_print_pwd) (set_color normal) $exit_status_prompt $venv_prompt $node_prompt
 end
+
+function prompt_is_root --description 'tests whether user is root'
+	if set -q UID
+		return (test $UID -eq 0)
+	elseif set -q EUID
+		return (test $EUID -eq 0)
+	else
+		return (test (id -u) -eq 0)
+	end
+end
