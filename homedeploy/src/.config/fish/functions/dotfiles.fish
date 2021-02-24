@@ -11,6 +11,8 @@ function dotfiles --description 'manage dotfiles'
             _dotfiles_help
         case update
             _dotfiles_update
+        case edit
+            _dotfiles_edit
     end
 
     argparse 'h/help' -- $argv
@@ -37,6 +39,15 @@ function _dotfiles_update
         _dotfiles_git pull
     else
         echo '[ERROR] dotfiles is currently not on master branch.'
+        return 1
+    end
+end
+
+function _dotfiles_edit --inherit-variable dotfiles_dir
+    if type -q code
+        code $dotfiles_dir
+    else
+        echo 'code is not installed.'
         return 1
     end
 end
