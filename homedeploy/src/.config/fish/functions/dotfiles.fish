@@ -12,6 +12,13 @@ function dotfiles --description 'manage dotfiles'
         case update
             _dotfiles_update
     end
+
+    argparse 'h/help' -- $argv
+
+    if set -lq _flag_help
+        _dotfiles_help
+        return
+    end
 end
 
 function _dotfiles_git --inherit-variable dotfiles_dir
