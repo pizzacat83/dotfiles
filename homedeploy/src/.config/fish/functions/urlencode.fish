@@ -18,5 +18,5 @@ function urlencode --description 'urlencode string'
         return 1
     end
 
-    python3 -c 'from sys import argv;from urllib.parse import quote;print(quote(argv[1], safe=""))' $argv[1]
+    string escape --style url $argv[1] | string replace -a '/' '%2F'
 end
