@@ -5,3 +5,4 @@ netcat
 socat
 telnet
 nano
+less
