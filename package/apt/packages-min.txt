@@ -5,4 +5,3 @@ netcat
 socat
 telnet
 nano
-language-pack-ja-base
