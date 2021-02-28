@@ -30,7 +30,12 @@ end
 function _dotfiles_help
     echo 'dotfiles: manage dotfiles'
     echo ''
-    echo '-h --help  print this message'
+    echo 'Subcommands:'
+    echo '  help       print this message'
+    echo '  update     git pull'
+    echo ''
+    echo 'Options:'
+    echo '  -h --help  print this message'
     return
 end
 
