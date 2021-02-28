@@ -6,3 +6,4 @@
 
 # these files are tracked
 !/.config/
+!/.latexmkrc
