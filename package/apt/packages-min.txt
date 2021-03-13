@@ -6,3 +6,6 @@ socat
 telnet
 nano
 less
+fzf
+bat
+fd-find
