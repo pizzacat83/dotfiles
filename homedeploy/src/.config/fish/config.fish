@@ -26,3 +26,8 @@ end
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+
+# apt installs fd as fdfind
+if not type -q fd; and type -q fdfind
+  alias fd="fdfind"
+end
