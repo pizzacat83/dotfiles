@@ -31,5 +31,7 @@ brew "opam"
 brew "haskell-stack"
 
 # others
+brew "pulumi"
+
 tap "aws/tap"
 brew "awscli"
