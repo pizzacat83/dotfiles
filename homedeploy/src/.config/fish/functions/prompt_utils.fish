@@ -90,8 +90,14 @@ function prompt_print_aws_vault_status
 			set date_command gdate
 		end
 		set -l expire_time ($date_command --date $AWS_SESSION_EXPIRATION +"%H:%M")
-
-		printf ' (aws: %s ~%s)' $AWS_VAULT $expire_time
+		set -l time_color brblack
+		if test ($date_command +"%s") -ge ($date_command --date "$AWS_SESSION_EXPIRATION - 10 minutes" +"%s")
+			set time_color yellow
+		end
+		if test ($date_command +"%s") -ge ($date_command --date "$AWS_SESSION_EXPIRATION - 3 minutes" +"%s")
+			set time_color red
+		end
+		printf ' %s(aws: %s %s~%s%s)%s' (set_color brblack) $AWS_VAULT (set_color $time_color) $expire_time (set_color brblack) (set_color normal)
 	end
 end
 
