@@ -79,7 +79,20 @@ function prompt_print_status_bar --description 'print status bar of prompt'
 	else 
 		set node_prompt ''
 	end
-	printf '%s%s%s@%s [%s%s%s]%s%s%s' (set_color cyan) (prompt_print_user) (set_color normal) (prompt_print_hostname) (set_color cyan -u) (prompt_print_pwd) (set_color normal) $exit_status_prompt $venv_prompt $node_prompt
+	set aws_prompt (prompt_print_aws_vault_status)
+	printf '%s%s%s@%s [%s%s%s]%s%s%s%s' (set_color cyan) (prompt_print_user) (set_color normal) (prompt_print_hostname) (set_color cyan -u) (prompt_print_pwd) (set_color normal) $exit_status_prompt $venv_prompt $node_prompt $aws_prompt
+end
+
+function prompt_print_aws_vault_status
+	if set -q AWS_VAULT
+		set -l date_command date
+		if type -q gdate
+			set date_command gdate
+		end
+		set -l expire_time ($date_command --date $AWS_SESSION_EXPIRATION +"%H:%M")
+
+		printf ' (aws: %s ~%s)' $AWS_VAULT $expire_time
+	end
 end
 
 function prompt_is_root --description 'tests whether user is root'
