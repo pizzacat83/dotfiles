@@ -35,3 +35,6 @@ brew "pulumi"
 
 tap "aws/tap"
 brew "awscli"
+
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
