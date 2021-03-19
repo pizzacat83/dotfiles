@@ -6,6 +6,7 @@
 !/prompt_utils.fish
 !/prompts/
 !/prompts/*
+!/aws-vault.fish
 !/dict.fish
 !/diary.fish
 !/dotfiles.fish
