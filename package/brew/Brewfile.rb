@@ -13,6 +13,7 @@ brew "git-secrets"
 
 # utilities
 brew "coreutils"
+brew "colordiff"
 brew "jq"
 brew "socat"
 brew "telnet"
