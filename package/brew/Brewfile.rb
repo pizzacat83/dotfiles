@@ -24,6 +24,7 @@ brew "semgrep"
 brew "fzf"
 brew "bat" # used by fzf.fish
 brew "fd" # used by fzf.fish
+brew "thefuck"
 
 # languages
 brew "python@3.9"
