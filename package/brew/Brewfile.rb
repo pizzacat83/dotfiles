@@ -25,6 +25,7 @@ brew "fzf"
 brew "bat" # used by fzf.fish
 brew "fd" # used by fzf.fish
 brew "thefuck"
+brew "terminal-notifier"
 
 # languages
 brew "python@3.9"

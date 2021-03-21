@@ -31,3 +31,6 @@ alias mv="mv -i"
 if not type -q fd; and type -q fdfind
   alias fd="fdfind"
 end
+
+# configs
+set -x __done_notify_sound 1
