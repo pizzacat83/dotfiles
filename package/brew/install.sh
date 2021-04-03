@@ -3,7 +3,7 @@ set -eu
 cd "$(dirname "$0")"
 
 # shellcheck source=../../install_init.sh
-. ../install_init.sh
+. ../../install_init.sh
 
 
 if ! command -v brew > /dev/null; then
