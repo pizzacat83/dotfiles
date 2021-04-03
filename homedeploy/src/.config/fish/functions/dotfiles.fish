@@ -47,7 +47,7 @@ end
 
 function _dotfiles_update
     if test (_dotfiles_git branch --show-current) = master
-        _dotfiles_git origin master
+        _dotfiles_git pull origin master
         _dotfiles_git --no-pager log master..origin/master
         _dotfiles_git merge --stat master origin/master
     else
