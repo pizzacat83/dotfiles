@@ -8,7 +8,9 @@ cd "$(dirname "$0")"
 nodeploy=" . .. .gitignore .DS_Store "
 backup_dir="backup/$(date '+%Y_%m_%d__%H_%M_%S')"
 
-[ "$dry_run" -eq 0 ] && mkdir -p "$backup_dir"
+if [ "$dry_run" -eq 0 ]; then
+    mkdir -p "$backup_dir"
+fi
 
 for filepath in src/* src/.*; do
     if [ ! -e "$filepath" ]; then
@@ -37,16 +39,22 @@ for filepath in src/* src/.*; do
         else
             echo "[INFO] $filename is linked to $current"
             echo "[INFO] overwriting link..."
-            [ "$dry_run" -eq 0 ] && ln -snfv "$source" "$target"
+            if [ "$dry_run" -eq 0 ]; then
+                ln -snfv "$source" "$target"
+            fi
             continue
         fi
     fi
 
     if [ -e "$target" ]; then
         echo "[WARN] $filename exists. backed up in $backup_dir/$filename"
-        [ "$dry_run" -eq 0 ] && mv "$target" "$backup_dir/"
+        if [ "$dry_run" -eq 0 ]; then
+            mv "$target" "$backup_dir/"
+        fi
     fi
 
     echo "[INFO] deploying $filename..."
-    [ "$dry_run" -eq 0 ] && ln -snv "$source" "$target"
+    if [ "$dry_run" -eq 0 ]; then
+        ln -snv "$source" "$target"
+    fi
 done

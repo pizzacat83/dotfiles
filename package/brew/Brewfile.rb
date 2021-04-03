@@ -20,6 +20,9 @@ brew "gnupg"
 brew "pinentry-mac"
 brew "shellcheck"
 brew "semgrep"
+brew "fzf"
+brew "bat" # used by fzf.fish
+brew "fd" # used by fzf.fish
 
 # languages
 brew "python@3.9"
@@ -29,5 +32,7 @@ brew "haskell-stack"
 brew "go"
 
 # others
+brew "pulumi"
+
 tap "aws/tap"
 brew "awscli"

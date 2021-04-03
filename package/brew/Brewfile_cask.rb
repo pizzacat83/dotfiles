@@ -11,6 +11,7 @@ cask "ngrok"
 cask "docker"
 cask "visual-studio-code"
 cask "iterm2"
+cask "aws-vault"
 cask "google-cloud-sdk"
 cask "postman"
 
