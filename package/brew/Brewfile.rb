@@ -25,6 +25,7 @@ brew "bat" # used by fzf.fish
 brew "fd" # used by fzf.fish
 
 # languages
+brew "openjdk"
 brew "python@3.9"
 brew "rbenv"
 brew "opam"
