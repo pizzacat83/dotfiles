@@ -24,6 +24,7 @@ cask "anki"
 
 # communication
 cask "slack"
+cask "zoom"
 
 # others
 cask "haptickey"
