@@ -21,6 +21,7 @@ cask "blackhole-16ch"
 # study
 cask "lyx"
 cask "anki"
+cask "mendeley"
 
 # communication
 cask "slack"
