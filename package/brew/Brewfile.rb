@@ -13,6 +13,7 @@ brew "git-secrets"
 
 # utilities
 brew "coreutils"
+brew "colordiff"
 brew "jq"
 brew "socat"
 brew "telnet"
@@ -23,6 +24,8 @@ brew "semgrep"
 brew "fzf"
 brew "bat" # used by fzf.fish
 brew "fd" # used by fzf.fish
+brew "thefuck"
+brew "terminal-notifier"
 
 # languages
 brew "openjdk"
@@ -37,3 +40,6 @@ brew "pulumi"
 
 tap "aws/tap"
 brew "awscli"
+
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
