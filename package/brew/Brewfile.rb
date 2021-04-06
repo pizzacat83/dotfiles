@@ -32,6 +32,7 @@ brew "python@3.9"
 brew "rbenv"
 brew "opam"
 brew "haskell-stack"
+brew "go"
 
 # others
 brew "pulumi"
