@@ -23,7 +23,7 @@ jobs:
     runs-on: macos-latest
     
     env:
-      HOMEBREW_BUNDLE_BREW_SKIP: awscli
+      HOMEBREW_BUNDLE_BREW_SKIP: awscli go
 
     steps:
       - uses: actions/checkout@v2
