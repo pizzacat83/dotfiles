@@ -25,6 +25,7 @@ cask "mendeley"
 
 # communication
 cask "slack"
+cask "discord"
 cask "zoom"
 
 # others
