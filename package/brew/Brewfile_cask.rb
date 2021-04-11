@@ -26,7 +26,6 @@ cask "mendeley"
 # communication
 cask "slack"
 cask "zoom"
-mas "LINE", id: 539883307
 
 # others
 cask "haptickey"
