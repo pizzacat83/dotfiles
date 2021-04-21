@@ -18,6 +18,10 @@ cask "postman"
 # sound
 cask "blackhole-16ch"
 
+# graphics
+cask "gimp"
+cask "inkscape"
+
 # study
 cask "lyx"
 cask "anki"
