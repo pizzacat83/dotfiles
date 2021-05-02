@@ -35,4 +35,8 @@ if not type -q fd; and type -q fdfind
 end
 
 # configs
+# done
 set -x __done_notify_sound 1
+
+# bat
+set -x BAT_PAGER "less -R"
