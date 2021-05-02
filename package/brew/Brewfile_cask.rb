@@ -21,6 +21,7 @@ cask "blackhole-16ch"
 # graphics
 cask "gimp"
 cask "inkscape"
+cask "clip-studio-paint"
 
 # study
 cask "lyx"
