@@ -10,6 +10,7 @@ brew "git"
 brew "gibo"
 brew "gh"
 brew "git-secrets"
+brew "bfg"
 
 # utilities
 brew "coreutils"
