@@ -34,7 +34,13 @@ if type -q gcp
   if type -q gcloud
     alias gcp="gcloud"
   else
-    alias gcp="gcp -i"
+    set -l gcp_type (type gcp)
+    function gcp --description "did you mean `gcloud`?" --inherit-variable gcp_type
+      echo $gcp_type
+      echo "Did you mean `gcloud`?"
+      echo If you really meant to run `gcp`, run `command gcp` instead.
+      return 1
+    end
   end
 end
 
