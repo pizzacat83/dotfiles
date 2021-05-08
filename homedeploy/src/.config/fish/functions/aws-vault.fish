@@ -1,4 +1,4 @@
-function aws-vault
+function aws-vault --wraps="aws-vault"
     if test (count $argv) -eq 1; and test $argv[1] = "refresh"
         if not set -q AWS_VAULT
             echo 'You are not logged in.'
