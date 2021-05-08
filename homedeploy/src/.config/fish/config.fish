@@ -27,6 +27,17 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 
+type -q grm; and alias grm="grm -i"
+type -q gmv; and alias gmv="gmv -i"
+
+if type -q gcp
+  if type -q gcloud
+    alias gcp="gcloud"
+  else
+    alias gcp="gcp -i"
+  end
+end
+
 alias less="less -r"
 
 # apt installs fd as fdfind
