@@ -28,6 +28,7 @@ brew "fd" # used by fzf.fish
 brew "thefuck"
 brew "terminal-notifier"
 brew "mas"
+brew "poppler"
 
 # languages
 brew "openjdk"
