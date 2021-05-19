@@ -51,6 +51,10 @@ if not type -q fd; and type -q fdfind
   alias fd="fdfind"
 end
 
+if test -x /Applications/LyX.app/Contents/MacOS/lyx
+  alias lyx="/Applications/LyX.app/Contents/MacOS/lyx"
+end
+
 # configs
 # done
 set -x __done_notify_sound 1
