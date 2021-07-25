@@ -24,6 +24,7 @@ cask "inkscape"
 cask "clip-studio-paint"
 
 # study
+cask "mathpix-snipping-tool"
 cask "lyx"
 cask "anki"
 cask "mendeley"
