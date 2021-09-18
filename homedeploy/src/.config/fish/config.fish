@@ -20,7 +20,10 @@ set -x PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $P
 if test -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
   source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
 end
-
+# fzf.fish
+set fzf_fish_custom_keybindings
+bind \cr __fzf_search_history
+bind \cf __zbind
 # aliases
 
 alias rm="rm -i"
