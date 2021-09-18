@@ -1,6 +1,6 @@
 # License
 
-My contribution to the code is licensed under [the Unlicense](./LICENSE_UNLICENSE).
+My contribution to the code is licensed under [the Unlicense](./LICENSE-UNLICENSE).
 
 Some files are derivatives of works licensed under different licenses. Those files are listed below.
 
