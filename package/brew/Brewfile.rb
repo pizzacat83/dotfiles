@@ -12,28 +12,29 @@ brew "gh"
 brew "git-secrets"
 brew "bfg"
 
+# PGP
+brew "gnupg"
+brew "pinentry-mac"
+
 # utilities
 brew "coreutils"
 brew "colordiff"
 brew "jq"
 brew "socat"
 brew "telnet"
-brew "gnupg"
-brew "pinentry-mac"
-brew "shellcheck"
-brew "semgrep"
 brew "fzf"
 brew "bat" # used by fzf.fish
 brew "fd" # used by fzf.fish
+brew "shellcheck"
+brew "semgrep"
 brew "thefuck"
 brew "terminal-notifier"
 brew "mas"
-brew "poppler"
-brew "pdftk-java"
-brew "ocrmypdf"
 brew "imagemagick" # used by lyx
+brew "tesseract"
 brew "smartmontools"
 brew "rclone"
+cask "ngrok"
 
 # languages
 brew "openjdk"
@@ -43,9 +44,16 @@ brew "opam"
 brew "haskell-stack"
 brew "go"
 
+# PDF utilities
+brew "poppler"
+brew "pdftk-java"
+brew "ocrmypdf"
+
 # cloud
 brew "pulumi"
+cask "google-cloud-sdk"
 
+cask "aws-vault"
 tap "aws/tap"
 brew "awscli"
 
@@ -56,22 +64,14 @@ brew "hashicorp/tap/terraform"
 cask "google-chrome"
 cask "firefox"
 
-# utilities
-cask "tunnelblick"
-cask "google-drive"
-cask "gyazo"
-cask "keybase"
-
 # development
-cask "ngrok"
 cask "docker"
 cask "visual-studio-code"
 cask "iterm2"
-cask "aws-vault"
-cask "google-cloud-sdk"
 cask "postman"
 cask "hex-fiend"
 cask "qemu"
+brew "act"
 
 # sound
 cask "blackhole-16ch"
@@ -94,16 +94,19 @@ cask "mendeley-reference-manager"
 cask "calibre"
 
 # communication
+cask "keybase"
 cask "slack"
 cask "discord"
 cask "zoom"
 mas "LINE", id: 539883307
 
-# others
-brew "act"
-
+# misc
 brew "languagetool"
 
-brew "tesseract"
-
 cask "haptickey"
+
+cask "tunnelblick"
+
+cask "google-drive"
+
+cask "gyazo"
