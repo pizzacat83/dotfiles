@@ -32,13 +32,8 @@ jobs:
 
       - run: brew update
 
-      - name: install from Brewfiles and check
+      - name: install from Brewfile and check
         run: |
-          for file in *.rb; do
-            if [ "$file" = "Brewfile_mas.rb" ]; then
-              continue
-            fi
-            echo Install from $file &&
-            brew bundle install --file $file --no-lock &&
-            brew bundle check --file $file
-          done
+          mas="$(brew bundle list --mas --file Brewfile.rb | tr '\n' ',')"
+          HOMEBREW_BUNDLE_MAS_SKIP="$mas" brew bundle install --file Brewfile.rb --no-lock &&
+          HOMEBREW_BUNDLE_MAS_SKIP="$mas" brew bundle check --file Brewfile.rb
