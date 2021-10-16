@@ -43,13 +43,7 @@ brew "opam"
 brew "haskell-stack"
 brew "go"
 
-# others
-brew "act"
-
-brew "languagetool"
-
-brew "tesseract"
-
+# cloud
 brew "pulumi"
 
 tap "aws/tap"
@@ -57,3 +51,59 @@ brew "awscli"
 
 tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"
+
+# browsers
+cask "google-chrome"
+cask "firefox"
+
+# utilities
+cask "tunnelblick"
+cask "google-drive"
+cask "gyazo"
+cask "keybase"
+
+# development
+cask "ngrok"
+cask "docker"
+cask "visual-studio-code"
+cask "iterm2"
+cask "aws-vault"
+cask "google-cloud-sdk"
+cask "postman"
+cask "hex-fiend"
+cask "qemu"
+
+# sound
+cask "blackhole-16ch"
+mas "LadioCast", id: 411213048
+
+# graphics
+cask "gimp"
+cask "inkscape"
+cask "clip-studio-paint"
+
+# video
+cask "obs"
+
+# study
+cask "mathpix-snipping-tool"
+cask "lyx"
+cask "anki"
+cask "mendeley"
+cask "mendeley-reference-manager"
+cask "calibre"
+
+# communication
+cask "slack"
+cask "discord"
+cask "zoom"
+mas "LINE", id: 539883307
+
+# others
+brew "act"
+
+brew "languagetool"
+
+brew "tesseract"
+
+cask "haptickey"
