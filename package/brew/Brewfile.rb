@@ -30,7 +30,7 @@ brew "semgrep"
 brew "thefuck"
 brew "terminal-notifier"
 brew "mas"
-brew "imagemagick" # used by lyx
+brew "imagemagick"
 brew "tesseract"
 brew "smartmontools"
 brew "rclone"
