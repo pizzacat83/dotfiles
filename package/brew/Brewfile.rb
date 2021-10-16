@@ -29,6 +29,11 @@ brew "thefuck"
 brew "terminal-notifier"
 brew "mas"
 brew "poppler"
+brew "pdftk-java"
+brew "ocrmypdf"
+brew "imagemagick" # used by lyx
+brew "smartmontools"
+brew "rclone"
 
 # languages
 brew "openjdk"
@@ -39,6 +44,12 @@ brew "haskell-stack"
 brew "go"
 
 # others
+brew "act"
+
+brew "languagetool"
+
+brew "tesseract"
+
 brew "pulumi"
 
 tap "aws/tap"
