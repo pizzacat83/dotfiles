@@ -34,6 +34,6 @@ jobs:
 
       - name: install from Brewfile and check
         run: |
-          mas="$(brew bundle list --mas --file Brewfile.rb | tr '\n' ',')"
+          mas="$(brew bundle list --mas --file Brewfile.rb | tr '\n' ' ')"
           HOMEBREW_BUNDLE_MAS_SKIP="$mas" brew bundle install --file Brewfile.rb --no-lock &&
           HOMEBREW_BUNDLE_MAS_SKIP="$mas" brew bundle check --file Brewfile.rb
