@@ -70,7 +70,7 @@ cask "visual-studio-code"
 cask "iterm2"
 cask "postman"
 cask "hex-fiend"
-cask "qemu"
+brew "qemu"
 brew "act"
 
 # sound
