@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = main
+
+[core]
+	excludesfile = ~/dotfiles/git/gitignore_global
+
+[include]
+	path = ~/dotfiles/git/identities/default.ini
+
+[includeIf "gitdir:~/develop/lab/"]
+	path = ~/dotfiles/git/identities/lab.ini
