@@ -1,3 +1,14 @@
+def hobby?()
+    # environment variable needs to start with HOMEBREW_
+    # so that brew bundle command passes it 
+    # return ENV.has_key?("HOMEBREW_PIZZACAT83_HOBBY")
+    raise "not implemented yet"
+end
+
+def personal?()
+    raise "not implemented yet"
+end
+
 tap "homebrew/core"
 tap "homebrew/cask"
 tap "homebrew/bundle"
@@ -80,10 +91,10 @@ mas "LadioCast", id: 411213048
 # graphics
 cask "gimp"
 cask "inkscape"
-cask "clip-studio-paint"
+cask "clip-studio-paint" if hobby?
 
 # video
-cask "obs"
+cask "obs" if hobby?
 
 # study
 cask "mathpix-snipping-tool"
@@ -96,9 +107,9 @@ cask "calibre"
 # communication
 cask "keybase"
 cask "slack"
-cask "discord"
+cask "discord" if personal?
 cask "zoom"
-mas "LINE", id: 539883307
+mas "LINE", id: 539883307 if personal?
 
 # misc
 brew "languagetool"
