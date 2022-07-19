@@ -14,9 +14,4 @@ fi
 
 if [ "$dry_run" -eq 0 ]; then
     brew bundle install --file Brewfile.rb --no-lock
-
-    if [ "$(uname)" = "Darwin" ]; then
-        brew bundle install --file Brewfile_cask.rb --no-lock
-        brew bundle install --file Brewfile_mas.rb --no-lock
-    fi
 fi
