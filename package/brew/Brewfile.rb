@@ -45,6 +45,8 @@ brew "imagemagick"
 brew "tesseract"
 brew "smartmontools"
 brew "rclone"
+brew "pict"
+brew "lnav"
 cask "ngrok"
 
 # languages
@@ -59,6 +61,9 @@ brew "go"
 brew "poppler"
 brew "pdftk-java"
 brew "ocrmypdf"
+brew "pdfgrep"
+cask "pdfpc"
+cask "pympress"
 
 # cloud
 brew "pulumi"
@@ -80,17 +85,28 @@ cask "docker"
 cask "visual-studio-code"
 cask "iterm2"
 cask "postman"
+brew "bazelisk"
 cask "hex-fiend"
 brew "qemu"
+brew "dosfstools"
+cask "android-platform-tools"
+cask "android-studio"
 brew "act"
+brew "kind"
+brew "skaffold"
 
 # sound
 cask "blackhole-16ch"
 mas "LadioCast", id: 411213048
 
 # graphics
+cask "skitch"
 cask "gimp"
 cask "inkscape"
+brew "pstoedit" # to render math in inkscape
+brew "python-tk@3.9" # used by textext (inkscape extension)
+brew "pygobject3" # used by textext (inkscape extension)
+brew "gtk+3" # used by textext (inkscape extension)
 cask "clip-studio-paint" if hobby?
 
 # video
@@ -103,6 +119,8 @@ cask "anki"
 cask "mendeley"
 cask "mendeley-reference-manager"
 cask "calibre"
+cask "kindle" if personal?
+cask "honto" if personal?
 
 # communication
 cask "keybase"
@@ -121,3 +139,12 @@ cask "tunnelblick"
 cask "google-drive"
 
 cask "gyazo"
+
+cask "todoist"
+
+cask "1password"
+cask "1password-cli"
+
+brew "pandoc"
+
+cask "virtualbox"
