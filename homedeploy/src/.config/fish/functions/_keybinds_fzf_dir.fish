@@ -5,7 +5,7 @@
 #
 # The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-function __zbind --description 'z command key binding'
+function _keybinds_fzf_dir --description 'z|fzf key binding'
     set current_token (commandline --current-token)
 
     set selected (

@@ -6,7 +6,7 @@ Some files are derivatives of works licensed under different licenses. Those fil
 
 ## Files licensed under different licenses
 
-### [`homedeploy/src/.config/fish/functions/__zbind.fish`](./homedeploy/src/.config/fish/functions/__zbind.fish)
+### [`homedeploy/src/.config/fish/functions/_keybinds_fzf_dir.fish`](./homedeploy/src/.config/fish/functions/_keybinds_fzf_dir.fish)
 
 Original work: [PatrickF1/fzf.fish](https://github.com/PatrickF1/fzf.fish) (licensed under the MIT License)
 

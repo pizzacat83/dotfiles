@@ -23,7 +23,7 @@ end
 # fzf.fish
 set fzf_fish_custom_keybindings
 bind \cr __fzf_search_history
-bind \cf __zbind
+bind \cf '_keybinds fzf_dir'
 # aliases
 
 alias rm="rm -i"
