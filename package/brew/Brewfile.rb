@@ -47,6 +47,7 @@ brew "smartmontools"
 brew "rclone"
 brew "pict"
 brew "lnav"
+brew "navi"
 cask "ngrok"
 
 # languages
@@ -94,6 +95,8 @@ cask "android-studio"
 brew "act"
 brew "kind"
 brew "skaffold"
+brew "mysql"
+brew "stern"
 
 # sound
 cask "blackhole-16ch"
@@ -148,3 +151,6 @@ cask "1password-cli"
 brew "pandoc"
 
 cask "virtualbox"
+cask "utm"
+
+cask "cerebro"
