@@ -141,8 +141,6 @@ cask "tunnelblick"
 
 cask "google-drive"
 
-cask "gyazo"
-
 cask "todoist"
 
 cask "1password"
