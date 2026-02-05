@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install tools
-      run: brew install shellcheck fish
+      run: apt install -y shellcheck fish
 
     - name: Lint shell scripts
       run: shellcheck -P SCRIPTDIR *.sh **/*.sh
