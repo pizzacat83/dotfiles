@@ -48,7 +48,10 @@ brew "rclone"
 brew "pict"
 brew "lnav"
 brew "navi"
+brew "topgrade"
+brew "grpcurl"
 cask "ngrok"
+brew "cloc"
 
 # languages
 brew "openjdk"
@@ -57,6 +60,10 @@ brew "rbenv"
 brew "opam"
 brew "haskell-stack"
 brew "go"
+brew "coursier/formulas/coursier"
+brew "plenv"
+brew "opa"
+brew "deno"
 
 # PDF utilities
 brew "poppler"
@@ -73,6 +80,7 @@ cask "google-cloud-sdk"
 cask "aws-vault"
 tap "aws/tap"
 brew "awscli"
+brew "azure-cli"
 
 tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"
@@ -152,3 +160,7 @@ cask "virtualbox"
 cask "utm"
 
 cask "cerebro"
+
+cask "obsidian"
+cask "logseq"
+cask "owasp-zap"
