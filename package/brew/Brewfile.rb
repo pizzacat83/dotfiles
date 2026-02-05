@@ -64,6 +64,7 @@ brew "coursier/formulas/coursier"
 brew "plenv"
 brew "opa"
 brew "deno"
+cask "dotnet-sdk"
 
 # PDF utilities
 brew "poppler"
@@ -105,6 +106,17 @@ brew "kind"
 brew "skaffold"
 brew "mysql"
 brew "stern"
+brew "aqua"
+brew "ast-grep"
+brew "gdb"
+brew "ghcup"
+brew "jnv"
+brew "ripgrep"
+brew "rlwrap"
+brew "watchexec"
+brew "wget"
+cask "codex"
+cask "orbstack"
 
 # sound
 cask "blackhole-16ch"
@@ -140,6 +152,12 @@ cask "discord" if personal?
 cask "zoom"
 mas "LINE", id: 539883307 if personal?
 
+# fonts
+
+cask "font-inter"
+cask "font-noto-sans-jp"
+cask "font-ubuntu-mono"
+
 # misc
 brew "languagetool"
 
@@ -164,3 +182,20 @@ cask "cerebro"
 cask "obsidian"
 cask "logseq"
 cask "owasp-zap"
+cask "raycast"
+cask "rectangle"
+
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "golang.org/x/tools/gopls"
+
+cargo "cargo-about"
+cargo "cargo-all-features"
+cargo "cargo-binutils"
+cargo "cargo-crev"
+cargo "cargo-edit"
+cargo "cargo-generate"
+cargo "cargo-llvm-cov"
+cargo "cargo-watch"
+cargo "kani-verifier"
+cargo "trunk"
