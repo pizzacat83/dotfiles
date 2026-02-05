@@ -34,18 +34,15 @@ brew "jq"
 brew "socat"
 brew "telnet"
 brew "fzf"
-brew "bat" # used by fzf.fish
-brew "fd" # used by fzf.fish
+brew "bat"
+brew "fd"
 brew "shellcheck"
-brew "semgrep"
 brew "thefuck"
 brew "terminal-notifier"
 brew "mas"
 brew "imagemagick"
-brew "tesseract"
 brew "smartmontools"
 brew "rclone"
-brew "pict"
 brew "lnav"
 brew "navi"
 brew "topgrade"
@@ -55,13 +52,11 @@ brew "cloc"
 
 # languages
 brew "openjdk"
-brew "python@3.9"
+brew "python@3.13"
 brew "rbenv"
 brew "opam"
-brew "haskell-stack"
 brew "go"
 brew "coursier/formulas/coursier"
-brew "plenv"
 brew "opa"
 brew "deno"
 cask "dotnet-sdk"
@@ -75,7 +70,6 @@ cask "pdfpc"
 cask "pympress"
 
 # cloud
-brew "pulumi"
 cask "google-cloud-sdk"
 
 cask "aws-vault"
@@ -94,18 +88,8 @@ cask "firefox"
 cask "docker"
 cask "visual-studio-code"
 cask "iterm2"
-cask "postman"
-brew "bazelisk"
-cask "hex-fiend"
 brew "qemu"
-brew "dosfstools"
-cask "android-platform-tools"
-cask "android-studio"
-brew "act"
-brew "kind"
-brew "skaffold"
 brew "mysql"
-brew "stern"
 brew "aqua"
 brew "ast-grep"
 brew "gdb"
@@ -117,6 +101,7 @@ brew "watchexec"
 brew "wget"
 cask "codex"
 cask "orbstack"
+brew "pandoc"
 
 # sound
 cask "blackhole-16ch"
@@ -126,22 +111,8 @@ mas "LadioCast", id: 411213048
 cask "skitch"
 cask "gimp"
 cask "inkscape"
-brew "pstoedit" # to render math in inkscape
-brew "python-tk@3.9" # used by textext (inkscape extension)
-brew "pygobject3" # used by textext (inkscape extension)
-brew "gtk+3" # used by textext (inkscape extension)
-cask "clip-studio-paint" if hobby?
-
-# video
-cask "obs" if hobby?
 
 # study
-cask "mathpix-snipping-tool"
-cask "lyx"
-cask "anki"
-cask "mendeley"
-cask "mendeley-reference-manager"
-cask "calibre"
 cask "kindle" if personal?
 cask "honto" if personal?
 
@@ -153,36 +124,22 @@ cask "zoom"
 mas "LINE", id: 539883307 if personal?
 
 # fonts
-
 cask "font-inter"
 cask "font-noto-sans-jp"
 cask "font-ubuntu-mono"
 
 # misc
-brew "languagetool"
-
-cask "haptickey"
-
-cask "tunnelblick"
-
 cask "google-drive"
-
-cask "todoist"
 
 cask "1password"
 cask "1password-cli"
 
-brew "pandoc"
-
-cask "virtualbox"
-cask "utm"
-
-cask "cerebro"
-
 cask "obsidian"
+
 cask "logseq"
-cask "owasp-zap"
+
 cask "raycast"
+
 cask "rectangle"
 
 go "github.com/go-delve/delve/cmd/dlv"
