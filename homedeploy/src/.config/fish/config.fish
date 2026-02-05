@@ -4,12 +4,24 @@ set FAKE_USERNAME pizzacat83
 # set general variables
 
 # setup tools
+# general
+set -x PATH ~/.local/bin/ $PATH
+
+# brew
+set -x PATH /usr/local/sbin $PATH
+
 # poetry
-set -x PATH "$HOME/.poetry/bin" $PATH
+set -x PATH "$HOME/Library/Python/3.9/bin" $PATH
 # rust
 set -x PATH "$HOME/.cargo/bin" $PATH
 # opam
 test -d ~/.opam && source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+# scala
+set -x PATH "$HOME/Library/Application Support/Coursier/bin" $PATH
+# perl
+if type -q plenv; plenv init - | source ; end
+# ghcup
+set -x PATH "$HOME/.ghcup/bin" $PATH
 # TeX Live
 set -x PATH /usr/local/texlive/2021/bin/x86_64-linux $PATH
 set -x PATH /usr/local/texlive/2021/bin/universal-darwin/ $PATH
@@ -25,7 +37,12 @@ bind \cr __fzf_search_history
 bind \cf '_keybinds fzf_dir'
 # aliases
 
-alias rm="rm -i"
+if type -q trash
+  alias rm="trash"
+else
+  alias rm="rm -i"
+end
+
 alias cp="cp -i"
 alias mv="mv -i"
 
@@ -63,3 +80,18 @@ set -x __done_notify_sound 1
 
 # bat
 set -x BAT_PAGER "less -R"
+
+set -x OP_PLUGIN_ALIASES_SOURCED 1
+alias aws="op plugin run -- aws"
+
+# bun
+set -x BUN_INSTALL "$HOME/.bun"
+set -x PATH $BUN_INSTALL/bin $PATH
+
+# pnpm
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
