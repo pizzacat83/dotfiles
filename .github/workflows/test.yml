@@ -6,6 +6,9 @@ name: Test
 # events but only for the master branch
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "install"
